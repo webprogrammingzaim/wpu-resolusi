@@ -1,7 +1,8 @@
 WPU RESOLUSI
-membuat website coding untuk website
+membuat coding untuk website 
 membuat forum website
 membuat kolom komentar
 membuat kolom login di web kita
 membuat kolom informasi di web kita
 membuat toko di web kita
+Membuat website all about Surabaya/Indonesia

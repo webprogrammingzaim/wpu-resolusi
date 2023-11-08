@@ -1,8 +1,23 @@
-WPU RESOLUSI
-membuat coding untuk website 
-membuat forum website
-membuat kolom komentar
-membuat kolom login di web kita
-membuat kolom informasi di web kita
-membuat toko di web kita
-Membuat website all about Surabaya/Indonesia
+beranda
+coding tampilan aplikasi ynci surabaya/ nasional
+element icon 
+element buttom with coding animation, warna buttom merah/hijau
+header tentang ynci/keaktifan motor2 ynci
+logo ynci bulat
+baground utama hitam gradasi merah/gold
+tampilan ter atas logo, dan icon pengingat, icon search dan chat
+---------------------------------------------------------------------
+selanjutnya slide informasi berupa gambar, lokasi, tanggal bulan tahun, penerbit
+slide informasi plus buttom link untuk informasi detail
+---------------------------------------------------
+slide selanjutnya di isi tampilan bubble berupa susunan pengurus regional beserta nama, jabatan, kota dan foto
+-------------------------------------------------------
+slide selanjutnya di isi sponsorship ynci berupa logo
+----------------------------------------------------
+slide berikutnya di isi galeri acara berisi gambar, lokasi tgl bulan tahun, kota
+------------------------------------
+slide berikutnya di isi event dengan judul, lokasi, tanggal bulan tahun, kontak, jadwal kegiatan, kota,
+dilanjtnya komentar acara/event tersebut
+daftar kesedian hadir (bubble foto dan nama, kota
+-------------------------------------------------------
+link sosial media

@@ -1,0 +1,107 @@
+<?php
+// Connect to the database
+$servername = "your_database_host";
+$username = "your_database_username";
+$password = "your_database_password";
+$dbname = "myforum";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $message = $_POST["message"];
+
+    // Insert post into the database
+    $sql = "INSERT INTO posts (username, message) VALUES ('$username', '$message')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Post added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Retrieve posts from the database
+$sql = "SELECT * FROM posts ORDER BY created_at DESC";
+$result = $conn->query($sql);
+
+// Close the database connection
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Forum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .forum-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="forum-container">
+    <h2>Simple Forum</h2>
+
+    <form method="post" action="forum.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Post</button>
+    </form>
+
+    <h3>Forum Posts</h3>
+    <?php
+    // Display forum posts
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<p><strong>" . $row["username"] . ":</strong> " . $row["message"] . "</p>";
+        }
+    } else {
+        echo "<p>No posts yet.</p>";
+    }
+    ?>
+</div>
+
+</body>
+</html>
